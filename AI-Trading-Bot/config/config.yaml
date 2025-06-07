@@ -1,0 +1,8 @@
+api_key: "tu_api_key_aqui"
+trading:
+  symbol: "AAPL"
+  timeframe: "1d"
+  strategy: "trend_following"
+risk:
+  stop_loss: 0.05
+  take_profit: 0.1

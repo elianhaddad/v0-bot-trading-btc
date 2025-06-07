@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Dashboard Trading Bot</title>
+  </head>
+  <body>
+    <h1>Dashboard del Trading Bot</h1>
+    <div id="data">Cargando datos...</div>
+
+    <script>
+      // Función para obtener datos del endpoint /data y actualizar la UI
+      function fetchData() {
+        fetch("/data")
+          .then((response) => response.json())
+          .then((data) => {
+            document.getElementById("data").innerHTML =
+              "Timestamp: " +
+              new Date(data.timestamp * 1000).toLocaleTimeString() +
+              " - Rendimiento Acumulado: " +
+              data.cumulative.toFixed(4);
+          })
+          .catch((error) => console.error("Error al obtener datos:", error));
+      }
+
+      // Llama a fetchData cada 2 segundos para actualizar la UI
+      setInterval(fetchData, 2000);
+      // Llamada inicial
+      fetchData();
+    </script>
+  </body>
+</html>

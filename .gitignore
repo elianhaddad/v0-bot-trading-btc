@@ -1,0 +1,8 @@
+venv/
+AI-Trading-Bot/venv/
+.venv/
+AI-Trading-Bot/.venv/
+AI-Trading-Bot/__pycache__/
+AI-Trading-Bot/notebooks/.ipynb_checkpoints/
+AI-Trading-Bot/src/__pycache__/
+.DS_Store
