@@ -56,15 +56,6 @@ class TradingSignal(Base):
     executed = Column(Boolean, default=False)
     created_at = Column(DateTime, default=datetime.utcnow)
 
-class BotConfig(Base):
-    __tablename__ = 'bot_config'
-    
-    id = Column(Integer, primary_key=True)
-    key = Column(String(50), unique=True, nullable=False)
-    value = Column(JSON, nullable=False)
-    description = Column(String(200))
-    updated_at = Column(DateTime, default=datetime.utcnow)
-
 class SystemLog(Base):
     __tablename__ = 'system_logs'
     
